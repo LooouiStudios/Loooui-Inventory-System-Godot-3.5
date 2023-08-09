@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Inventory/scenes/ItemSlotSpawner.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/scenes/item_slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Inventory/scenes/HotbarSpawner.gd" type="Script" id=3]
+[ext_resource path="res://Inventory/scenes/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://Inventory/scenes/Sprite.gd" type="Script" id=5]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Inventory" type="Control" parent="."]
+margin_left = 43.9946
+margin_top = 58.4541
+margin_right = 195.995
+margin_bottom = 133.454
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSlotSpawner" type="VBoxContainer" parent="Inventory"]
+margin_left = -10.3298
+margin_top = -11.1244
+margin_right = 29.6702
+margin_bottom = 28.8756
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+item_slot_scene = ExtResource( 2 )
+
+[node name="Hotbar" type="Control" parent="."]
+margin_left = 69.4539
+margin_top = 42.4324
+margin_right = 160.454
+margin_bottom = 54.4324
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HotbarSpawner" type="HBoxContainer" parent="Hotbar"]
+margin_left = 9.50272
+margin_top = -18.1671
+margin_right = 25.5027
+margin_bottom = -2.16714
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+item_slot_scene = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." groups=[
+"drag_sprite",
+]]
+script = ExtResource( 5 )
